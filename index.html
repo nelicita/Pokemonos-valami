@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    
+
+    <script>
+    let bulbasaur = "https://pokeapi.co/api/v2/pokemon/1/"
+    let charmander = "https://pokeapi.co/api/v2/pokemon/4/"
+    let pikachu = "https://pokeapi.co/api/v2/pokemon/25/"
+    let pidgeotto = "https://pokeapi.co/api/v2/pokemon/17/"
+    let rattata = "https://pokeapi.co/api/v2/pokemon/19/"
+    document.write("Tanár úr, én sajnos nem értek a javascripthez, otthon átírom (a mai nap folyamán még nem fogom tudni, holnap 3 tantárgyból dolgozat) C#-ba amit csak tudok, mert itt még egy tömböt sem tudok létrehozni. Ezt a fetchet is lehet nem így kell, de legalább próbálkoztam.")
+    var pokemonok=["bulbasaur", "charmander", "pikachu", "pidgeotto", "rattata"]
+    var melyik=Math.Round(Math.random()*5);
+    if(melyik=1){
+        document.write("You have found a wild Bulbasaur! Hurry, tame him before he dissappeares!")
+    }
+    else if(melyik=2){
+        document.write("You have found a wild Charmander! Hurry, tame him before he dissappeares!")
+    }
+    else if(melyik=3){
+        document.write("You have found a wild Pikachu! Hurry, tame him before he dissappeares!")
+    }
+    else if(melyik=4){
+        document.write("You have found a wild Pidgeotto! Hurry, tame him before he dissappeares!")
+    }
+    else{
+        document.write("You have found a wild Rattata! Hurry, tame him before he dissappeares!")
+    }
+    fetch(bulbasaur)
+    .then((response) => {
+        return response.json();
+    })
+    .then((data) => {
+        console.log(data.forms[0].url)
+    });
+
+    fetch(charmander)
+    .then((response) => {
+        return response.json();
+    })
+    .then((data) => {
+        console.log(data.forms[1].url)
+    });
+
+    fetch(pikachu)
+    .then((response) => {
+        return response.json();
+    })
+    .then((data) => {
+        console.log(data.forms[2].url)
+    });
+
+    fetch(pidgeotto)
+    .then((response) => {
+        return response.json();
+    })
+    .then((data) => {
+        console.log(data.forms[3].url)
+    });
+
+    fetch(rattata)
+    .then((response) => {
+        return response.json();
+    })
+    .then((data) => {
+        console.log(data.forms[4].url)
+    });
+
+    </script>
+</body>
+</html>
